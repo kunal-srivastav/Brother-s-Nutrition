@@ -1,0 +1,1 @@
+import{b as s,r as f,C as i,H as c}from"./index-sGzm-zv8.js";const p=(t,a)=>{const e=s();f.useEffect(()=>{if(a&&i.success(a),t&&i.error(t),a||t){const o=setTimeout(()=>{e(c())},3e3);return()=>clearTimeout(o)}},[a,t,e])};export{p as u};

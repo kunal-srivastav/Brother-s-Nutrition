@@ -45,7 +45,7 @@ function NavBar() {
       <div className="container-fluid d-flex align-items-center flex-nowrap">
         {/* Logo */}
         <Link to="/" className="navbar-brand fw-bold text-dark fs-4 flex-shrink-0 me-2">
-          FOREVER
+          Brother's <s><span style={{color: ("#FFD700", "#FFC107")}} >Nutrtion</span> </s>
         </Link>
 
         {/* Search Bar */}

@@ -7,7 +7,7 @@ import { getAllProducts } from "../features/products/productController";
 // Lazy-loaded components
 const ProductCard = React.lazy(() => import("./ProductCard"));
 const Pagination = React.lazy(() => import("./Pagination"));
-import SkeletonProduct from "./skeletonProduct";
+import SkeletonProduct from "./SkeletonProduct.jsx";
 
 function LatestCollection() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getProductsInCart, toggleProductInCart } from "./CartController";
+import { getProductsInCart, toggleProductInCart } from "./CartController.jsx";
 import { handleOnPending, handleOnReject, uiState } from "../utils/extraReducer";
 
 const calculateTotal = (items) => {

@@ -1,6 +1,6 @@
-import carousel1 from "../assets/Carousel-1.mp4";
-import carousel2 from "../assets/Carousel-2.mp4";
-import carousel3 from "../assets/Carousel-3.mp4";
+import carousel1 from "./Carousels/Carousel-1.mp4";
+import carousel2 from "./Carousels/Carousel-2.mp4";
+import carousel3 from "./Carousels/Carousel-3.mp4";
 
 function Home() {
   const videos = [carousel1, carousel2, carousel3];

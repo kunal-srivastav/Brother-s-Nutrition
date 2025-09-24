@@ -1,13 +1,9 @@
-import carousel1 from "./Carousels/Carousel-1.mp4";
-import carousel2 from "./Carousels/Carousel-2.mp4";
-import carousel3 from "./Carousels/Carousel-3.mp4";
-
 function Home() {
-  const videos = [carousel1, carousel2, carousel3];
+  const videos = ["/Carousels/Carousel-1.mp4", "/Carousels/Carousel-2.mp4", "/Carousels/Carousel-3.mp4"];
 
   return (
     <>
-      <link rel="preload" as="video" href={carousel1} type="video/mp4" />
+      <link rel="preload" as="video" href={videos[0]} type="video/mp4" />
 
       <div
         id="carouselExampleRide"

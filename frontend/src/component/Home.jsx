@@ -1,13 +1,17 @@
-
 function Home() {
-  const videos = ["/Carousels/Carousel-1.mp4", "/Carousels/Carousel-2.mp4", "/Carousels/Carousel-3.mp4"];
+  const videos = [
+    "/Carousels/Carousel-1.mp4",
+    "/Carousels/Carousel-2.mp4",
+    "/Carousels/Carousel-3.mp4",
+  ];
 
   return (
-    <div id="carouselExampleFade"
+    <div
+      id="carouselExampleFade"
       className="carousel slide carousel-fade"
       data-bs-ride="carousel"
       data-bs-interval="5000"
-      style={{ maxWidth: "100%" }}
+      style={{ width: "100%" }}
     >
       {/* Indicators */}
       <div className="carousel-indicators">
@@ -37,21 +41,35 @@ function Home() {
               backgroundColor: "#000",
             }}
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
+            {/* Aspect ratio wrapper */}
+            <div
+              className="carousel-wrapper"
               style={{
+                position: "relative",
                 width: "100%",
-                maxWidth: "900px", // max width for large screens
-                height: "auto",
-                objectFit: "contain",
+                maxWidth: "1900px",
+                paddingTop: "21%", // 400 ÷ 1900 ≈ 0.21
+                overflow: "hidden",
               }}
             >
-              <source src={src} type="video/mp4" />
-            </video>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover", // fills container without stretching
+                }}
+              >
+                <source src={src} type="video/mp4" />
+              </video>
+            </div>
           </div>
         ))}
       </div>

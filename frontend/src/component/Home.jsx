@@ -1,8 +1,8 @@
 function Home() {
   const videos = [
-    "/Carousels/Carousel-1.mp4",
-    "/Carousels/Carousel-2.mp4",
-    "/Carousels/Carousel-3.mp4",
+    `${import.meta.env.BASE_URL}Carousels/Carousel-1.mp4`,
+    `${import.meta.env.BASE_URL}Carousels/Carousel-2.mp4`,
+    `${import.meta.env.BASE_URL}Carousels/Carousel-3.mp4`,
   ];
 
   return (

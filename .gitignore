@@ -14,7 +14,6 @@
 # Optional public folders if generated
 # -------------------------
 /backend/public
-/frontend/public
 /frontend/src/assets
 
 # -------------------------

@@ -45,7 +45,7 @@ function LatestCollection() {
           <div
             key={index}
             onClick={() => navigate(`/collection?category=${category}`)}
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", widows: "70px", flexShrink: 0 }}
           >
             <img
               src={img}

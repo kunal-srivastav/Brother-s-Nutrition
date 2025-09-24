@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getProductsInCart, toggleProductInCart } from '../features/carts/CartController';
+import { getProductsInCart, toggleProductInCart } from '../features/carts/cartController.jsx';
 import { updateQuantity } from '../features/carts/cartSlice';
 import { useEffect } from "react";
 import { Icon } from "../component/Icons";

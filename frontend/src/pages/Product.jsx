@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from "react";
 import { getProduct } from "../features/products/productController";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { toggleProductInCart } from "../features/carts/CartController";
+import { toggleProductInCart } from "../features/carts/cartController";
 const ReviewForm = React.lazy(() => import("../component/ReviewForm"));
 const ReviewsList = React.lazy(() => import("../component/ReviewsList"));
 import "./Product.css";

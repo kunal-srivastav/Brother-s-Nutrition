@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { axiosInstance } from "../utils/extraReducer";
+import { axiosInstance } from "../utils/extraReducer.jsx";
 
 export const toggleProductInCart = createAsyncThunk("/cart/add", 
     async({productId, quantity}, {rejectWithValue}) => {

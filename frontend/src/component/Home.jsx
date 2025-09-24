@@ -1,9 +1,13 @@
+import Carousel1 from "../../public/Carousels/Carousel-1.mp4";
+import Carousel2 from "../../public/Carousels/Carousel-2.mp4";
+import Carousel3 from "../../public/Carousels/Carousel-3.mp4";
+
 function Home() {
 
   const videos = [
-    "/Carousels/Carousel-1.mp4",
-    "/Carousels/Carousel-2.mp4",
-    "/Carousels/Carousel-3.mp4",
+    Carousel1,
+    Carousel2,
+    Carousel3
   ];
 
   return (

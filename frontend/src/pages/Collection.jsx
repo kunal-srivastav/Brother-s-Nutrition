@@ -7,7 +7,7 @@ import { getAllProducts } from '../features/products/productController';
 const Pagination = React.lazy(() => import('../component/Pagination'));
 const FilterForm = React.lazy(() => import('../component/FilterForm'));
 const ProductCard = React.lazy(() => import('../component/ProductCard'));
-import SkeletonProduct from '../component/skeletonProduct';
+import SkeletonProduct from '../component/SkeletonProduct.jsx';
 
 function Collection() {
   const [searchParams] = useSearchParams();

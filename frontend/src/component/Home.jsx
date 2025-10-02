@@ -1,8 +1,17 @@
 function Home() {
   const videos = [
-    "/Carousels/Carousel-1.mp4",
-    "/Carousels/Carousel-2.mp4",
-    "/Carousels/Carousel-3.mp4",
+    {
+      src: "/Carousels/Untitled design.mp4",
+      poster: "/Carousels/Untitled design.jpg", // fallback image
+    },
+    {
+      src: "/Carousels/Carousel-2.mp4",
+      poster: "/Carousels/Carousel-2.jpg",
+    },
+    {
+      src: "/Carousels/Carousel-3.mp4",
+      poster: "/Carousels/Carousel-3.jpg",
+    },
   ];
 
   return (
@@ -10,8 +19,6 @@ function Home() {
       id="carouselExampleFade"
       className="carousel slide carousel-fade"
       data-bs-ride="carousel"
-      data-bs-interval="5000"
-      style={{ width: "100%" }}
     >
       {/* Indicators */}
       <div className="carousel-indicators">
@@ -28,48 +35,24 @@ function Home() {
         ))}
       </div>
 
-      {/* Slides */}
+      {/* Carousel Items */}
       <div className="carousel-inner">
-        {videos.map((src, index) => (
+        {videos.map((video, index) => (
           <div
             key={index}
             className={`carousel-item ${index === 0 ? "active" : ""}`}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#000",
-            }}
+            data-bs-interval="10000"
           >
-            {/* Aspect ratio wrapper */}
-            <div
-              className="carousel-wrapper"
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "1900px",
-                paddingTop: "21%", // 400 ÷ 1900 ≈ 0.21
-                overflow: "hidden",
-              }}
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover", // fills container without stretching
-                }}
-              >
-                <source src={src} type="video/mp4" />
-              </video>
-            </div>
+            <video
+              src={video.src}
+              poster={video.poster}   // ✅ fallback image
+              className="d-block w-100"
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ objectFit: "cover", maxHeight: "680px" }}
+            />
           </div>
         ))}
       </div>
@@ -81,7 +64,7 @@ function Home() {
         data-bs-target="#carouselExampleFade"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
 
@@ -91,7 +74,7 @@ function Home() {
         data-bs-target="#carouselExampleFade"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true" />
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>

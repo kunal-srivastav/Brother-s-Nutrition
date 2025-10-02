@@ -15,3 +15,49 @@
         width: 100%;
     }
 };
+.product-category-slider {
+  display: flex;
+  flex-wrap: wrap;          /* Desktop: allow wrapping */
+  justify-content: center;  /* Center items on desktop */
+  gap: 1rem;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Mobile: horizontal scroll */
+@media (max-width: 767px) {
+  .product-category-slider {
+    flex-wrap: nowrap;        /* Prevent vertical wrapping */
+    overflow-x: auto;         /* Enable horizontal scroll */
+    scroll-snap-type: x mandatory;
+    padding: 0 10px;
+  }
+
+  .category-item {
+    flex: 0 0 auto;           /* Prevent shrinking */
+    width: 110px;
+    scroll-snap-align: start;
+  }
+
+  .category-img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Desktop: smaller items, centered */
+@media (min-width: 768px) {
+  .category-item {
+    width: 120px;
+  }
+
+  .category-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Hide scrollbar */
+.product-category-slider::-webkit-scrollbar {
+  display: none;
+}

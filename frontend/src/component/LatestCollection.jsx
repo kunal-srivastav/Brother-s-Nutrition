@@ -40,30 +40,24 @@ function LatestCollection() {
       {firstProductImage && <link rel="preload" as="image" href={firstProductImage} />}
 
       {/* Product Categories */}
-      <div className="d-flex flex-wrap justify-content-center text-center mt-3 gap-3">
+      <div className="d-flex flex-row justify-content-evenly product-category-slider mt-3 gap-3 px-2">
         {productCategory.map(({ img, category }, index) => (
           <div
             key={index}
+            className="category-item text-center"
             onClick={() => navigate(`/collection?category=${category}`)}
-            style={{ cursor: "pointer", width: "70px", flexShrink: 0 }}
           >
             <img
               src={img}
               alt={category}
               loading="lazy"
-              className="rounded-circle bg-secondary-subtle"
-              style={{
-                width: "70px",
-                height: "70px",
-                objectFit: "contain",
-                border: "2px solid #ddd",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
-              }}
+              className="rounded-circle category-img bg-secondary-subtle"
             />
-            <p className="small fw-medium mt-1">{category}</p>
+            <p className="small fw-semibold mt-1">{category}</p>
           </div>
         ))}
       </div>
+
 
       <p className="fs-1 mt-1 text-center fw-bold">Latest Products</p>
 

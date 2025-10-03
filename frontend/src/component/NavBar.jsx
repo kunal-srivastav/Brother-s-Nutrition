@@ -13,6 +13,7 @@ function NavBar() {
 
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   const navLinks = [
     { to: "/", label: "Home", icon: <Icon name="Home" /> },
@@ -32,6 +33,7 @@ function NavBar() {
     if (!searchItem) return;
     navigate(`/collection?query=${encodeURIComponent(searchItem)}`);
     setQuery("");
+    setShowSearch(false);
   };
 
   const handleOnLogout = () => {
@@ -44,29 +46,81 @@ function NavBar() {
     <header className="navbar navbar-light bg-white sticky-top shadow-sm py-2">
       <div className="container-fluid d-flex align-items-center flex-nowrap">
         {/* Logo */}
-        <Link to="/" className="navbar-brand fw-bold text-dark fs-4 flex-shrink-0 me-2">
+        <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-2">
           Brother's <s><span style={{color: ("#FFD700", "#FFC107")}} >Nutrtion</span> </s>
         </Link>
 
-        {/* Search Bar */}
-        <form onSubmit={handleSearch} className="flex-grow-1 mx-3" role="search">
-          <input
-            className="form-control rounded-pill px-3 search-input"
-            type="search"
-            placeholder="Search products..."
-            aria-label="Search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </form>
+      {/* Search Icon */}
+      <div className="d-flex align-items-center">
+        <button
+          className="btn btn-light border-0 ms-5"
+          onClick={() => setShowSearch(prev => !prev)} >
+          <Icon name={showSearch ? "Close" : "Search"} size={18} />
+        </button>
+
+        {/* 🖥 Desktop Inline Search */}
+        <div className="d-none d-lg-block ms-2">
+          {showSearch && (
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search products..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              autoFocus
+              style={{
+                width: "450px",
+                transition: "all 0.3s ease-in-out",
+              }}
+            />
+          )}
+        </div>
+
+        {/* 📱 Mobile Fullscreen Overlay */}
+        {showSearch && (
+          <div className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
+            style={{ zIndex: 1050 }}
+          >
+            {/* Header with Close */}
+            <div className="d-flex justify-content-between align-items-center p-3 border-bottom">
+              <h5 className="mb-0">Search</h5>
+              <button
+                className="btn btn-light border-0"
+                onClick={() => setShowSearch(false)}
+              >
+                <Icon name={"Close"} size={22} />
+              </button>
+            </div>
+
+            {/* Search Input */}
+            <div className="p-3">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSearch(e);
+                }}
+                className="d-flex align-items-center bg-light rounded-3 px-2 shadow-sm"
+              >
+                <Icon name={"Search"} size={20} className="text-muted me-2" />
+                <input
+                  type="text"
+                  className="form-control border-0 bg-light"
+                  placeholder="Search products..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  autoFocus
+                />
+              </form>
+            </div>
+          </div>
+        )}
+      </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="navbar-toggler border-0 d-lg-none flex-shrink-0"
+        <button className="navbar-toggler border-0 d-lg-none flex-shrink-0"
           onClick={() => setIsOpen(true)}
           type="button"
-          aria-controls="offcanvasMenu"
-        >
+          aria-controls="offcanvasMenu" >
           <span className="navbar-toggler-icon"></span>
         </button>
 

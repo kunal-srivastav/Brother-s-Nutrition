@@ -20,7 +20,8 @@ import {
   Menu,
   ArrowLeft,
   FolderUp,
-  Pencil
+  Pencil,
+  X
 } from "lucide-react";
 
 // Centralized icon map
@@ -46,7 +47,8 @@ export const Icons = {
   Menu,
   ArrowLeft,
   FolderUp,
-  Edit: Pencil
+  Edit: Pencil,
+  Close: X
 };
 
 // Reusable Icon component

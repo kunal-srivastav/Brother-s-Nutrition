@@ -64,20 +64,20 @@
 
 .carousel-banner {
   width: 100%;
-  height: 60vh;          /* Desktop height */
-  object-fit: cover;     /* Crop nicely like a hero banner */
+  height: 70vh;          /* Desktop height */
+  object-fit: contain;     /* Crop nicely like a hero banner */
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
   .carousel-banner {
-    height: 40vh;
+    height: 25vh;
   }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   .carousel-banner {
-    height: 25vh;
+    height: 20vh;
   }
 }

@@ -40,7 +40,7 @@ function LatestCollection() {
       {firstProductImage && <link rel="preload" as="image" href={firstProductImage} />}
 
       {/* Product Categories */}
-      <div className="d-flex flex-row justify-content-evenly product-category-slider gap-3 px-2">
+      <div className="d-flex flex-row justify-content-evenly product-category-slider mt-3">
         {productCategory.map(({ img, category }, index) => (
           <div
             key={index}

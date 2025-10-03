@@ -35,7 +35,7 @@
 
   .category-item {
     flex: 0 0 auto;           /* Prevent shrinking */
-    width: 110px;
+    width: 100px;
     scroll-snap-align: start;
   }
 
@@ -48,7 +48,7 @@
 /* Desktop: smaller items, centered */
 @media (min-width: 768px) {
   .category-item {
-    width: 120px;
+    width: 100px;
   }
 
   .category-img {

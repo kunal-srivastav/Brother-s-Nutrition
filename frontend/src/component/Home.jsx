@@ -1,32 +1,32 @@
 function Home() {
-  const videos = [
+  const banners = [
     {
-      src: "/Carousels/Untitled design.mp4",
-      poster: "/Carousels/Untitled design.jpg", // fallback image
+      src: "/Carousels/banner-1.mp4",
+      alt: "Banner 1",
     },
     {
       src: "/Carousels/Carousel-2.mp4",
-      poster: "/Carousels/Carousel-2.jpg",
+      alt: "Banner 2",
     },
     {
       src: "/Carousels/Carousel-3.mp4",
-      poster: "/Carousels/Carousel-3.jpg",
+      alt: "Banner 3",
     },
   ];
 
   return (
     <div
-      id="carouselExampleFade"
-      className="carousel slide carousel-fade"
+      id="carouselExample"
+      className="carousel slide"
       data-bs-ride="carousel"
     >
       {/* Indicators */}
       <div className="carousel-indicators">
-        {videos.map((_, index) => (
+        {banners.map((_, index) => (
           <button
             key={index}
             type="button"
-            data-bs-target="#carouselExampleFade"
+            data-bs-target="#carouselExample"
             data-bs-slide-to={index}
             className={index === 0 ? "active" : ""}
             aria-current={index === 0 ? "true" : undefined}
@@ -35,24 +35,23 @@ function Home() {
         ))}
       </div>
 
-      {/* Carousel Items */}
+      {/* Slides */}
       <div className="carousel-inner">
-        {videos.map((video, index) => (
+        {banners.map((banner, index) => (
           <div
             key={index}
             className={`carousel-item ${index === 0 ? "active" : ""}`}
-            data-bs-interval="10000"
           >
             <video
-              src={video.src}
-              poster={video.poster}   // ✅ fallback image
-              className="d-block w-100"
               autoPlay
               loop
               muted
               playsInline
-              style={{ objectFit: "cover", maxHeight: "680px" }}
+              src={banner.src}
+              aria-label={banner.alt}   // accessibility
+              className="d-block w-100 carousel-banner"
             />
+
           </div>
         ))}
       </div>
@@ -61,17 +60,16 @@ function Home() {
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleFade"
+        data-bs-target="#carouselExample"
         data-bs-slide="prev"
       >
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
-
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleFade"
+        data-bs-target="#carouselExample"
         data-bs-slide="next"
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>

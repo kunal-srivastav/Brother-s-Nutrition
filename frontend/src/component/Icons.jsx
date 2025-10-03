@@ -1,5 +1,6 @@
 import {
   Home,
+  Search,
   Grid,
   Mail,
   Info,
@@ -25,6 +26,7 @@ import {
 // Centralized icon map
 export const Icons = {
   Home,
+  Search,
   Collection: Grid,
   Contact: Mail,
   About: Info,

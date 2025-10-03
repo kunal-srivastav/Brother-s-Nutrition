@@ -53,7 +53,7 @@ function LatestCollection() {
               loading="lazy"
               className="rounded-circle category-img bg-secondary-subtle"
             />
-            <p className="small fw-semibold mt-1">{category}</p>
+            <p className="small fw-semibold mt-2">{category}</p>
           </div>
         ))}
       </div>

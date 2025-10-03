@@ -5,7 +5,7 @@ function Home() {
       alt: "Banner 1",
     },
     {
-      src: "/Carousels/Carousel-2.mp4",
+      src: "/Carousels/banner-2.mp4",
       alt: "Banner 2",
     },
     {

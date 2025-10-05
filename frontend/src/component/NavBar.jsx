@@ -224,7 +224,7 @@ function NavBar() {
       </div>
 
       {/* Mobile Offcanvas */}
-      <div className={`offcanvas offcanvas-start d-lg-none ${isOpen ? "show" : ""}`} tabIndex="-1">
+      <div className={`offcanvas offcanvas-start w-75 d-lg-none ${isOpen ? "show" : ""}`} tabIndex="-1">
         <div className="offcanvas-header">
           <h5 className="offcanvas-title fw-bold">Menu</h5>
           <button type="button" className="btn-close text-reset" onClick={() => setIsOpen(false)} />

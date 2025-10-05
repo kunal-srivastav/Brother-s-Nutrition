@@ -6,7 +6,7 @@ function Footer() {
 
         {/* Brand / About */}
         <div className="text-center mb-4">
-          <h4 className="fw-bold">Brother's Nutrition</h4>
+          <h4 className="fw-bold">Brother's <span style={{color: "#de2509"}} >Nutrition</span></h4>
           <p className="small text-muted">
             Your trusted source for 100% authentic supplements, delivered directly from us.
           </p>

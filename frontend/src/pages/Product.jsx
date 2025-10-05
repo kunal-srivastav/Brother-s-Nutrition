@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { getProduct } from "../features/products/productController";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toggleProductInCart } from "../features/carts/cartController";
 const ReviewForm = React.lazy(() => import("../component/ReviewForm"));
 const ReviewsList = React.lazy(() => import("../component/ReviewsList"));
@@ -24,6 +24,7 @@ const renderStars = (rating) => {
 
 function Product() {
 
+  const navigate = useNavigate();
   const { productId } = useParams();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
@@ -48,6 +49,7 @@ function Product() {
 
   const handleCartbtn = () => {
     dispatch(toggleProductInCart({ productId: product._id, quantity }));
+    navigate("/cart");
   };
 
   // Check if this product is already in cart

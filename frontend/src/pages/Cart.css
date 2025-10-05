@@ -1,3 +1,16 @@
+.card-title {
+  font-size: 1rem;        /* Adjust size if needed */
+  font-weight: 600;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /* Show max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;  /* Break long words */
+}
+
+
 .fade-section {
   opacity: 0;
   transform: translateY(20px);

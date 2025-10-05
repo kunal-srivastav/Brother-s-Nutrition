@@ -8,7 +8,7 @@ function Admin() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
+    <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       {/* Header */}
       <header className="d-flex justify-content-between align-items-center p-3 border-bottom bg-light">
         <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-2">

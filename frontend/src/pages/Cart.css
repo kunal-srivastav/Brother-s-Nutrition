@@ -1,0 +1,27 @@
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cart-item-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  max-width: 80px;
+}
+
+.img-fluid {
+  object-fit: cover;
+}

@@ -49,7 +49,9 @@ function Product() {
 
   const handleCartbtn = () => {
     dispatch(toggleProductInCart({ productId: product._id, quantity }));
-    navigate("/cart");
+    setTimeout(() => {
+      navigate("/cart");
+    }, 2000);
   };
 
   // Check if this product is already in cart

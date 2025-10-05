@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./about.css"; // <-- import CSS file here
+import "./About.css"; // <-- import CSS file here
 
 function About() {
   const [visible, setVisible] = useState(false);

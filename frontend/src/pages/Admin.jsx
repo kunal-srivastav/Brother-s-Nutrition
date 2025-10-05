@@ -11,15 +11,13 @@ function Admin() {
     <div className="d-flex flex-column" style={{ minHeight: "auto" }}>
       {/* Header */}
       <header className="d-flex justify-content-between align-items-center p-3 border-bottom bg-light">
-        <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-2">
-          Brother's <span style={{color: "#de2509"}} >Nutrition</span>
-        </Link>
-
         <Link to="/"
-          className="d-inline-flex align-items-center gap-2 text-light text-decoration-none px-3 py-2 rounded-3 bg-dark shadow-sm"
+          className="d-inline-flex align-items-center text-decoration-none rounded-3"
         >
-          <Icon name={"ArrowLeft"} className="fs-5" />
-          Back
+          <Icon name={"ArrowLeft"} color={"black"} className="fs-2" />
+        </Link>
+        <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-5 pe-5">
+          Brother's <span style={{color: "#de2509"}} >Nutrition</span>
         </Link>
 
         {/* Mobile menu button */}

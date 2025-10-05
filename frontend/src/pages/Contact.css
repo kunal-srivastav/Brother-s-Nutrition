@@ -1,0 +1,45 @@
+/* Fade in from right */
+.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in from left */
+.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Image hover */
+.contact-img {
+  transition: transform 0.5s ease;
+}
+
+.contact-img:hover {
+  transform: scale(1.03);
+}
+
+/* Button hover */
+.contact-btn {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: #dc3545;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+}

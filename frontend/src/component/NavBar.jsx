@@ -47,7 +47,7 @@ function NavBar() {
       <div className="container-fluid d-flex align-items-center flex-nowrap">
         {/* Logo */}
         <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-2">
-          Brother's <s><span style={{color: ("#FFD700", "#FFC107")}} >Nutrtion</span> </s>
+          Brother's <span style={{color: "#de2509"}} >Nutrition</span>
         </Link>
 
       {/* Search Icon */}
@@ -55,7 +55,7 @@ function NavBar() {
         <button
           className="btn btn-light border-0 ms-5"
           onClick={() => setShowSearch(prev => !prev)} >
-          <Icon name={showSearch ? "Close" : "Search"} size={18} />
+          <Icon name={showSearch ? "Close" : "Search"} className={"m-1"} size={18} />
         </button>
 
         {/* 🖥 Desktop Inline Search */}

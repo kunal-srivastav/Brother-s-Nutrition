@@ -6,7 +6,7 @@ function Footer() {
 
         {/* Brand / About */}
         <div className="text-center mb-4">
-          <h4 className="fw-bold">Supplemart</h4>
+          <h4 className="fw-bold">Brother's Nutrition</h4>
           <p className="small text-muted">
             Your trusted source for 100% authentic supplements, delivered directly from us.
           </p>
@@ -26,7 +26,7 @@ function Footer() {
           <div className="col-md-6">
             <h6 className="fw-bold">Authenticity Guarantee</h6>
             <p className="small mb-2">
-              Supplemart guarantees authenticity on all products. You can be confident in every purchase.
+              Brother's Nutrition guarantees authenticity on all products. You can be confident in every purchase.
             </p>
             <p className="small mb-2">
               Multi-brand store since 2025, including our own supplement range. Genuine products at fair prices.
@@ -38,7 +38,7 @@ function Footer() {
 
         {/* Bottom Line */}
         <div className="text-center text-muted small">
-          &copy; {new Date().getFullYear()} Supplemart. All rights reserved.
+          &copy; {new Date().getFullYear()} Brother's Nutrition. All rights reserved.
         </div>
       </div>
     </footer>

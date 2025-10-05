@@ -2,7 +2,7 @@ function Pagination({page, setPage, totalPages}) {
 
     return (
       <nav aria-label="Page">
-        <ul className="pagination p-0 pb-1 justify-content-end">
+        <ul className="pagination pagination-sm p-0 pb-1 justify-content-end">
           {/* Prev Button */}
           <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
             <button className="page-link text-dark border-secondary"

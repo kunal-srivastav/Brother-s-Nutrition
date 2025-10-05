@@ -1,7 +1,7 @@
 
 function Contact() {
   return (
-    <>
+    <div className="container-fluid">
     <h2 className='display-6 fw-bold text-center' >Contact Us <hr /></h2>
     <div className="row flex-lg-row align-items-center g-5">
     <div className="col-10 col-sm-8 col-lg-5">
@@ -25,7 +25,7 @@ function Contact() {
         <button type="button" className="btn btn-outline-primary btn-lg px-4 me-md-2">Explore Jobs</button>
       </div>
     </div>
-  </>
+  </div>
   )
 }
 

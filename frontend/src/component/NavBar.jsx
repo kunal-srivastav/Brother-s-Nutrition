@@ -81,30 +81,22 @@ function NavBar() {
           <div className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
             style={{ zIndex: 1050 }}
           >
-            {/* Header with Close */}
-            <div className="d-flex justify-content-between align-items-center p-3 border-bottom">
-              <h5 className="mb-0">Search</h5>
-              <button
-                className="btn btn-light border-0"
-                onClick={() => setShowSearch(false)}
-              >
-                <Icon name={"Close"} size={22} />
-              </button>
-            </div>
 
             {/* Search Input */}
-            <div className="p-3">
-              <form
-                onSubmit={(e) => {
+            {/* <div className="d-flex p-3"> */}
+
+              <form onSubmit={(e) => {
                   e.preventDefault();
                   handleSearch(e);
                 }}
-                className="d-flex align-items-center bg-light rounded-3 px-2 shadow-sm"
-              >
-                <Icon name={"Search"} size={20} className="text-muted me-2" />
-                <input
+                className="d-flex align-items-center px-2 mt-2 gap-1" >
+                <button onClick={() => setShowSearch(false)}
+                className="btn btn-transparent border-0 p-0" >
+                <Icon name={"ArrowLeft"} color={"black"} className="fs-2" />
+              </button>
+              <input
                   type="text"
-                  className="form-control border-0 bg-light"
+                  className="form-control border-0 bg-light shadow-sm rounded-3"
                   placeholder="Search products..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
@@ -112,7 +104,7 @@ function NavBar() {
                 />
               </form>
             </div>
-          </div>
+          // </div>
         )}
       </div>
 
@@ -133,7 +125,7 @@ function NavBar() {
                   to={item.to}
                   className={({ isActive }) =>
                     `nav-link px-3 fw-medium ${
-                      isActive ? "text-warning" : "text-dark"
+                      isActive ? "text-danger" : "text-dark"
                     }`
                   }
                 >

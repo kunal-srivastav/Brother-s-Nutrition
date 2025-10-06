@@ -74,7 +74,7 @@ function LatestCollection() {
             ))}
           </Suspense>
         ) : (
-          <div className="col-12 text-center py-3">
+          <div className="col-12 py-3 w-100 text-center">
             <h5 className="text-muted">No products available</h5>
           </div>
         )}

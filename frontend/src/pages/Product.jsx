@@ -54,8 +54,6 @@ function Product() {
     }, 2000);
   };
 
-  // Check if this product is already in cart
-
   return (
     <div className="product-page container my-5">
       <div className="row g-5">

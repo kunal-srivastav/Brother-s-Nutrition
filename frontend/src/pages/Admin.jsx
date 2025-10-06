@@ -16,7 +16,7 @@ function Admin() {
         >
           <Icon name={"ArrowLeft"} color={"black"} className="fs-2" />
         </Link>
-        <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-5 pe-5">
+        <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-5">
           Brother's <span style={{color: "#de2509"}} >Nutrition</span>
         </Link>
 

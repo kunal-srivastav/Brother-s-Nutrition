@@ -54,14 +54,13 @@ function NavBar() {
         {/* Search Icon */}
         <div className="d-flex align-items-center">
           <button
-            className="btn btn-light border-0 ms-5"
+            className="btn btn-light border-0 ms-5 d-lg-none"
             onClick={() => setShowSearch(prev => !prev)} >
             <Icon name={showSearch ? "Close" : "Search"} className={"m-1"} size={18} />
           </button>
 
           {/* 🖥 Desktop Inline Search */}
           <div className="d-none d-lg-block ms-2">
-            {showSearch && (
               <input
                 type="text"
                 className="form-control"
@@ -71,11 +70,10 @@ function NavBar() {
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
                 autoFocus
                 style={{
-                  width: "250px",
+                  width: "300px",
                   transition: "all 0.3s ease-in-out",
                 }}
               />
-            )}
           </div>
 
           {/* 📱 Mobile Fullscreen Overlay */}
@@ -96,7 +94,6 @@ function NavBar() {
                   <Icon name="ArrowLeft" color="black" className="fs-2" />
                 </button>
 
-                {/* Input */}
                 <input
                   type="text"
                   className="form-control border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
@@ -107,13 +104,13 @@ function NavBar() {
                   aria-label="Search products"
                 />
 
-                {/* Optional Search Button */}
                 <button type="submit" className="btn btn-light border-0">
                   <Icon name="Search" size={18} />
                 </button>
               </form>
             </div>
           )}
+
         </div>
 
         {/* Mobile Toggle */}

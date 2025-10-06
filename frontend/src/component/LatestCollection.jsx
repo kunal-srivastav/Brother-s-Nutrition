@@ -55,7 +55,7 @@ function LatestCollection() {
       <p className="fs-1 mt-1 text-center fw-bold">Latest Products</p>
 
       {/* Latest Products Grid */}
-      <div className="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 bg-body-tertiary p-2 mb-3 rounded">
+      <div className="row g-2 g-sm-3 g-md-4 row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 bg-body-tertiary p-2 mb-3 rounded">
         {loading ? (
           <SkeletonProduct count={limit} />
         ) : products?.length ? (

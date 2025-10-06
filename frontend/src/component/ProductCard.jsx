@@ -21,7 +21,7 @@ function ProductCard ({product}) {
                 </div>
             </Link>
             <div className="p-3 mt-auto">
-                <p className="fw-semibold product-name text-truncate mb-1">
+                <p className="text-muted product-name text-truncate mb-1">
                 {product?.name}
                 </p>
                 <div>

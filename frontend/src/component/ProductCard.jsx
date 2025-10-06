@@ -6,7 +6,7 @@ function ProductCard ({product}) {
     const { loggedInUser } = useSelector(state => state.users);
 
     return (
-    <div className="col-4 col-md-3 col-lg-2 d-flex" key={product?._id}>
+    <div className="col-6 col-sm-4 col-md-3 col-lg-2 d-flex" key={product?._id}>
     <div className="product-card card flex-fill shadow-sm border-0 d-flex flex-column h-100">
         <Link
         to={loggedInUser ? `/product/${product?._id}` : "/login"}

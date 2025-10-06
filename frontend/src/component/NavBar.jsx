@@ -5,7 +5,15 @@ import { logout } from "../features/users/userController";
 const ProfilePic = React.lazy(() => import("../pages/ProfilePic"));
 import { Icon } from "./Icons";
 
+  const navLinks = [
+    { to: "/", label: "Home", icon: <Icon name="Home" /> },
+    { to: "/collection", label: "Collection", icon: <Icon name="Collection" /> },
+    { to: "/about", label: "About", icon: <Icon name="About" /> },
+    { to: "/contact", label: "Contact", icon: <Icon name="Contact" /> },
+  ];
+
 function NavBar() {
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loggedInUser } = useSelector((state) => state.users);
@@ -14,13 +22,6 @@ function NavBar() {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-
-  const navLinks = [
-    { to: "/", label: "Home", icon: <Icon name="Home" /> },
-    { to: "/collection", label: "Collection", icon: <Icon name="Collection" /> },
-    { to: "/about", label: "About", icon: <Icon name="About" /> },
-    { to: "/contact", label: "Contact", icon: <Icon name="Contact" /> },
-  ];
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -50,63 +51,70 @@ function NavBar() {
           Brother's <span style={{color: "#de2509"}} >Nutrition</span>
         </Link>
 
-      {/* Search Icon */}
-      <div className="d-flex align-items-center">
-        <button
-          className="btn btn-light border-0 ms-5"
-          onClick={() => setShowSearch(prev => !prev)} >
-          <Icon name={showSearch ? "Close" : "Search"} className={"m-1"} size={18} />
-        </button>
+        {/* Search Icon */}
+        <div className="d-flex align-items-center">
+          <button
+            className="btn btn-light border-0 ms-5"
+            onClick={() => setShowSearch(prev => !prev)} >
+            <Icon name={showSearch ? "Close" : "Search"} className={"m-1"} size={18} />
+          </button>
 
-        {/* 🖥 Desktop Inline Search */}
-        <div className="d-none d-lg-block ms-2">
-          {showSearch && (
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search products..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              autoFocus
-              style={{
-                width: "450px",
-                transition: "all 0.3s ease-in-out",
-              }}
-            />
-          )}
-        </div>
-
-        {/* 📱 Mobile Fullscreen Overlay */}
-        {showSearch && (
-          <div className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
-            style={{ zIndex: 1050 }}
-          >
-
-            {/* Search Input */}
-            {/* <div className="d-flex p-3"> */}
-
-              <form onSubmit={(e) => {
-                  e.preventDefault();
-                  handleSearch(e);
-                }}
-                className="d-flex align-items-center px-2 mt-2 gap-1" >
-                <button onClick={() => setShowSearch(false)}
-                className="btn btn-transparent border-0 p-0" >
-                <Icon name={"ArrowLeft"} color={"black"} className="fs-2" />
-              </button>
+          {/* 🖥 Desktop Inline Search */}
+          <div className="d-none d-lg-block ms-2">
+            {showSearch && (
               <input
+                type="text"
+                className="form-control"
+                placeholder="Search products..."
+                value={query}
+                onChange={(e) => {setQuery(e.target.value)}}
+                onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
+                autoFocus
+                style={{
+                  width: "450px",
+                  transition: "all 0.3s ease-in-out",
+                }}
+              />
+            )}
+          </div>
+
+          {/* 📱 Mobile Fullscreen Overlay */}
+          {showSearch && (
+            <div
+              className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
+              style={{ zIndex: 1050 }}
+            >
+              {/* Mobile Search Form */}
+              <form onSubmit={handleSearch} className="d-flex align-items-center px-2 mt-2 gap-2">
+                {/* Back Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowSearch(false)}
+                  className="btn btn-transparent border-0 p-0"
+                  aria-label="Close search"
+                >
+                  <Icon name="ArrowLeft" color="black" className="fs-2" />
+                </button>
+
+                {/* Input */}
+                <input
                   type="text"
-                  className="form-control border-0 bg-light shadow-sm rounded-3"
+                  className="form-control border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
                   placeholder="Search products..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   autoFocus
+                  aria-label="Search products"
                 />
+
+                {/* Optional Search Button */}
+                <button type="submit" className="btn btn-light border-0">
+                  <Icon name="Search" size={18} />
+                </button>
               </form>
             </div>
-          // </div>
-        )}
-      </div>
+          )}
+        </div>
 
         {/* Mobile Toggle */}
         <button className="navbar-toggler border-0 d-lg-none flex-shrink-0"

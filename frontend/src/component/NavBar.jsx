@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../features/users/userController";
@@ -12,6 +12,16 @@ import { Icon } from "./Icons";
     { to: "/contact", label: "Contact", icon: <Icon name="Contact" /> },
   ];
 
+  const placeholderSuggestions = [
+  "Creatine",
+  "Protein",
+  "Mass Gainer",
+  "Pre-Workout",
+  "Omega-3",
+  "BCAA",
+  "Multivitamin"
+];
+
 function NavBar() {
 
   const navigate = useNavigate();
@@ -22,6 +32,18 @@ function NavBar() {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [placeholder, setPlaceholder] = useState(placeholderSuggestions[0]);
+
+   useEffect(() => {
+    const interval = setInterval(() => {
+      setPlaceholder(prev => {
+        const currentIndex = placeholderSuggestions.indexOf(prev);
+        return placeholderSuggestions[(currentIndex + 1) % placeholderSuggestions.length];
+      });
+    }, 2000); // rotate every 2 seconds
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, []);
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -64,7 +86,7 @@ function NavBar() {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Search products..."
+                placeholder={placeholder}
                 value={query}
                 onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
@@ -97,7 +119,7 @@ function NavBar() {
                 <input
                   type="text"
                   className="form-control border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
-                  placeholder="Search products..."
+                  placeholder={placeholder}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   autoFocus

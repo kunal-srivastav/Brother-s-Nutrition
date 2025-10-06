@@ -19,13 +19,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto; /* fixed image area */
+  height: 160px; /* good default for mobile */
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .product-image img {
-  max-height: 180px;
+  max-height: 100%;
+  width: auto;
   object-fit: contain;
 }
+
+@media (min-width: 576px) {
+  .product-image {
+    height: 180px; /* small devices (like landscape phones) */
+  }
+}
+
+@media (min-width: 768px) {
+  .product-image {
+    height: 200px; /* tablets */
+  }
+}
+
+@media (min-width: 992px) {
+  .product-image {
+    height: 220px; /* desktops */
+  }
+}
+
 
 .product-name {
   display: -webkit-box;

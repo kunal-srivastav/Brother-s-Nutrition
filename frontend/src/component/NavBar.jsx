@@ -71,7 +71,7 @@ function NavBar() {
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
                 autoFocus
                 style={{
-                  width: "450px",
+                  width: "250px",
                   transition: "all 0.3s ease-in-out",
                 }}
               />

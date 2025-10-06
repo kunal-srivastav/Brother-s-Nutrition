@@ -14,14 +14,15 @@ function LatestCollection() {
   const dispatch = useDispatch();
 
   const productCategory = useMemo(() => [
-    { img: "https://cdn2.nutrabay.com/marketing-journey/Gold-Whey-1753207699.png", category: "Protein" },
-    { img: "https://cdn2.nutrabay.com/marketing-journey/Creatine-1753207660.png", category: "Creatine" },
-    { img: "https://cdn2.nutrabay.com/marketing-journey/Mega-Mass-1753207721.png", category: "Weight-Gainer" },
-    { img: "https://cdn2.nutrabay.com/marketing-journey/Pre-workout-1753207770.png", category: "Pre-Workout" },
-    { img: "https://cdn2.nutrabay.com/marketing-journey/Fish-Oil-1753207680.png", category: "Omega-3" },
-    { img: "https://cdn2.nutrabay.com/marketing-journey/BCAA-2025-03-13T11:45:58.png", category: "BCAA" },
-    { img: "https://cdn2.nutrabay.com/marketing-journey/Multivamin-2025-03-13T11:46:21.png", category: "Multivitamin" }
+    { img: "/product-category/Whey-protein.png", category: "Protein" },
+    { img: "/product-category/Creatine.png", category: "Creatine" },
+    { img: "/product-category/Mass-gainer.png", category: "Weight-Gainer" },
+    { img: "/product-category/Pre-workout.png", category: "Pre-Workout" },
+    { img: "/product-category/Fish-oil.png", category: "Omega-3" },
+    { img: "/product-category/BCAA.png", category: "BCAA" },
+    { img: "/product-category/Multivitamin.png", category: "Multivitamin" }
   ], []);
+
 
   const { products, totalPages, loading } = useSelector((state) => state.products);
   const [page, setPage] = useState(1);
@@ -42,22 +43,14 @@ function LatestCollection() {
       {/* Product Categories */}
       <div className="d-flex justify-content-evenly product-category-slider mt-3">
         {productCategory.map(({ img, category }, index) => (
-          <div
-            key={index}
-            className="category-item text-center"
-            onClick={() => navigate(`/collection?category=${category}`)}
-          >
-            <img
-              src={img}
-              alt={category}
-              loading="lazy"
-              className="rounded-circle category-img bg-secondary-subtle"
-            />
-            <p className="small fw-semibold mt-2">{category}</p>
+          <div key={index} className="category-item text-center"
+            onClick={() => navigate(`/collection?category=${category}`)} >
+            <img src={img} alt={category} loading="lazy"
+              className="rounded-circle category-img bg-secondary-subtle" />
+            <p className="text-muted small fw-semibold mt-2">{category}</p>
           </div>
         ))}
       </div>
-
 
       <p className="fs-1 mt-1 text-center fw-bold">Latest Products</p>
 

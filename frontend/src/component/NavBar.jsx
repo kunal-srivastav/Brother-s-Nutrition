@@ -12,14 +12,14 @@ import { Icon } from "./Icons";
     { to: "/contact", label: "Contact", icon: <Icon name="Contact" /> },
   ];
 
-  const placeholderSuggestions = [
+const PLACEHOLDER_SUGGESTIONS = [
   "Creatine",
   "Protein",
   "Mass Gainer",
   "Pre-Workout",
   "Omega-3",
   "BCAA",
-  "Multivitamin"
+  "Multivitamin",
 ];
 
 function NavBar() {
@@ -32,17 +32,20 @@ function NavBar() {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [placeholder, setPlaceholder] = useState(placeholderSuggestions[0]);
+  const [placeholder, setPlaceholder] = useState(PLACEHOLDER_SUGGESTIONS[0]);
 
-   useEffect(() => {
-    const interval = setInterval(() => {
-      setPlaceholder(prev => {
-        const currentIndex = placeholderSuggestions.indexOf(prev);
-        return placeholderSuggestions[(currentIndex + 1) % placeholderSuggestions.length];
-      });
-    }, 2000); // rotate every 2 seconds
+  useEffect(() => {
+    let index = 0;
+    let timeoutId;
 
-    return () => clearInterval(interval); // cleanup on unmount
+    const rotatePlaceholder = () => {
+      setPlaceholder(PLACEHOLDER_SUGGESTIONS[index]);
+      index = (index + 1) % PLACEHOLDER_SUGGESTIONS.length;
+      timeoutId = setTimeout(rotatePlaceholder, 2000);
+    };
+
+    rotatePlaceholder();
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const handleNavigate = (path) => {
@@ -75,6 +78,9 @@ function NavBar() {
 
         {/* Search Icon */}
         <div className="d-flex align-items-center">
+          <button className="btn btn-transparent border-0 p-0 d-lg-none">
+            <Icon name={"Search"} size={24} onClick={() => setShowSearch(true)} />
+          </button>
 
           {/* 🖥 Desktop Inline Search */}
           <div className="d-none d-lg-block ms-2">
@@ -85,7 +91,6 @@ function NavBar() {
                 value={query}
                 onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
-                autoFocus
                 style={{
                   width: "300px",
                   transition: "all 0.3s ease-in-out",

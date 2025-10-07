@@ -77,7 +77,57 @@ function NavBar() {
         </Link>
 
         {/* Search Icon */}
+        <div className="d-flex align-items-center">
 
+          {/* 🖥 Desktop Inline Search */}
+          <div className="d-none d-lg-block ms-2">
+              <input type="text" className="form-control" placeholder={placeholder}
+                value={query} onChange={(e) => {setQuery(e.target.value)}} style={{minWidth: "300px",
+                  maxWidth: "400px"
+                }}
+                onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
+                autoFocus
+              />
+          </div>
+
+          <button className="btn btn-transparent border-0 p-0 d-lg-none">
+            <Icon name="Search" size={24} onClick={() => setShowSearch(true)} />
+          </button>
+
+          {/* 📱 Mobile Fullscreen Overlay */}
+          {showSearch && (
+            <div className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
+              style={{ zIndex: 1050 }} >
+              {/* Mobile Search Form */}
+              <form onSubmit={handleSearch} className="d-flex align-items-center px-2 mt-2 gap-2">
+                {/* Back Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowSearch(false)}
+                  className="btn btn-transparent border-0 p-0"
+                  aria-label="Close search"
+                >
+                  <Icon name="ArrowLeft" color="black" className="fs-2" />
+                </button>
+
+                <input
+                  type="text"
+                  className="border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
+                  placeholder={placeholder}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  // autoFocus
+                  aria-label="Search products"
+                />
+
+                <button type="submit" className="btn btn-light border-0">
+                  <Icon name="Search" size={18} />
+                </button>
+              </form>
+            </div>
+          )}
+
+        </div>
 
         {/* Mobile Toggle */}
         <button className="navbar-toggler border-0 d-lg-none flex-shrink-0"

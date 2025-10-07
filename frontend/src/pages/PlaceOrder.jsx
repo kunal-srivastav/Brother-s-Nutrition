@@ -132,7 +132,7 @@ function PlaceOrder() {
 
                   <div className="row g-3">
                     <div className="col-md-5">
-                      <input type="text" className="form-control shadow-sm" value={"India"} disabled />
+                      <input type="text" className="form-control shadow-sm" value={"India"} readOnly />
                     </div>
 
                     <div className="col-md-4">

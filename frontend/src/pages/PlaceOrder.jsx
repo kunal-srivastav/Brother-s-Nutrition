@@ -13,7 +13,7 @@ function PlaceOrder() {
     houseNo: "",
     street: "",
     city: "",
-    country: "",
+    country: "India",
     zip: "",
     paymentMethod: "",
   });

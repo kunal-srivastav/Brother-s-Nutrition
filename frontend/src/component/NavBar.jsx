@@ -78,14 +78,15 @@ function NavBar() {
           <div className="d-none d-lg-block ms-2">
               <input
                 type="text"
-                className="border bg-light rounded-3 px-3 py-2"
+                className="form-control"
                 placeholder={placeholder}
                 value={query}
                 onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
                 autoFocus
                 style={{
-                  maxWidth: "300px",
+                  minWidth: "300px",
+                  maxWidth: "400px",
                   transition: "all 0.3s ease-in-out",
                 }}
               />

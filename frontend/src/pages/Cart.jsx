@@ -15,7 +15,7 @@ function Cart() {
     dispatch(getProductsInCart());
     const timer = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(timer);
-  }, [dispatch]);
+  }, [dispatch, cartItems]);
 
   return (
     <div className="container-fluid py-5">

@@ -35,7 +35,6 @@ const cartSlice = createSlice({
         .addCase(toggleProductInCart.fulfilled, (state, action) => {
             state.loading = false;
             const { message, cart, added } = action.payload;
-            console.log(action.payload);
             state.added = added;
             state.cartItems = cart;
             state.successMsg = message;

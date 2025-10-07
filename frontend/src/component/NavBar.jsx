@@ -76,36 +76,21 @@ function NavBar() {
 
           {/* 🖥 Desktop Inline Search */}
           <div className="d-none d-lg-block ms-2">
-              <input
-                type="text"
-                className="form-control"
-                placeholder={placeholder}
-                value={query}
-                onChange={(e) => {setQuery(e.target.value)}}
+              <input type="text" className="form form-control" placeholder={placeholder}
+                value={query} onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
                 autoFocus
-                style={{
-                  minWidth: "300px",
-                  maxWidth: "400px",
-                  transition: "all 0.3s ease-in-out",
-                }}
               />
           </div>
 
           <button className="btn btn-transparent border-0 p-0 d-lg-none">
-            <Icon
-              name="Search"
-              size={24}
-              onClick={() => setShowSearch(true)}
-            />
+            <Icon name="Search" size={24} onClick={() => setShowSearch(true)} />
           </button>
 
           {/* 📱 Mobile Fullscreen Overlay */}
           {showSearch && (
-            <div
-              className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
-              style={{ zIndex: 1050 }}
-            >
+            <div className="d-lg-none position-fixed top-0 start-0 w-100 h-100 bg-white"
+              style={{ zIndex: 1050 }} >
               {/* Mobile Search Form */}
               <form onSubmit={handleSearch} className="d-flex align-items-center px-2 mt-2 gap-2">
                 {/* Back Button */}
@@ -182,7 +167,7 @@ function NavBar() {
           {loggedInUser?.role === "admin" && (
             <Link
               to="/admin"
-              className="btn btn-sm btn-info rounded-pill px-3 d-flex align-items-center gap-1"
+              className="btn btn-sm btn-danger rounded-pill px-3 d-flex align-items-center gap-1"
             >
               <Icon name="Admin" size={14} /> Admin
             </Link>
@@ -273,7 +258,7 @@ function NavBar() {
                 {loggedInUser?.role === "admin" && (
                   <button
                     onClick={() => handleNavigate("/admin")}
-                    className="btn btn-info rounded-pill text-white d-flex align-items-center gap-2"
+                    className="btn btn-danger rounded-pill text-white d-flex align-items-center gap-2"
                   >
                     <Icon name="Admin" /> Admin
                   </button>
@@ -312,7 +297,7 @@ function NavBar() {
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
                     `nav-link d-flex align-items-center gap-3 px-3 py-2 rounded-3 fw-medium ${
-                      isActive ? "bg-warning text-dark shadow-sm" : "text-dark"
+                      isActive ? "bg-danger text-dark shadow-sm" : "text-dark"
                     }`
                   }
                 >

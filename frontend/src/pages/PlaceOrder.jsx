@@ -131,19 +131,7 @@ function PlaceOrder() {
 
                 <div className="row g-3">
                   <div className="col-md-5">
-                    <select
-                      className="form-select shadow-sm"
-                      id="country"
-                      name="country"
-                      value={deliveryData.country}
-                      onChange={handleOnChange}
-                      required
-                    >
-                      <option value="">Choose...</option>
-                      <option value="India">India</option>
-                      <option value="Singapore">Singapore</option>
-                    </select>
-                    <div className="invalid-feedback">Please select a valid country.</div>
+                    <input type="text" className="form-control shadow-sm" value={"India"} disabled />
                   </div>
 
                   <div className="col-md-4">
@@ -217,7 +205,7 @@ function PlaceOrder() {
           </div>
         </>
       ) : (
-        <h1>No Products in cart</h1>
+        <h1 className='text-center'>No Products in cart</h1>
       )}
     </div>
   );

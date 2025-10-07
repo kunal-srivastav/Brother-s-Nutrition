@@ -92,7 +92,8 @@ function NavBar() {
                 onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
                 style={{
-                  width: "300px",
+                  minWidth: "300px",
+                  flexShrink: 0,
                   transition: "all 0.3s ease-in-out",
                 }}
               />

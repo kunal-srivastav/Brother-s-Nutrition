@@ -36,16 +36,11 @@ function NavBar() {
 
   useEffect(() => {
     let index = 0;
-    let timeoutId;
-
-    const rotatePlaceholder = () => {
+    const interval = setInterval(() => {
       setPlaceholder(PLACEHOLDER_SUGGESTIONS[index]);
       index = (index + 1) % PLACEHOLDER_SUGGESTIONS.length;
-      timeoutId = setTimeout(rotatePlaceholder, 2000);
-    };
-
-    rotatePlaceholder();
-    return () => clearTimeout(timeoutId);
+    }, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleNavigate = (path) => {
@@ -78,26 +73,31 @@ function NavBar() {
 
         {/* Search Icon */}
         <div className="d-flex align-items-center">
-          <button className="btn btn-transparent border-0 p-0 d-lg-none">
-            <Icon name={"Search"} size={24} onClick={() => setShowSearch(true)} />
-          </button>
 
           {/* 🖥 Desktop Inline Search */}
           <div className="d-none d-lg-block ms-2">
               <input
                 type="text"
-                className="form-control"
+                className="border bg-light rounded-3 px-3 py-2"
                 placeholder={placeholder}
                 value={query}
                 onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
+                autoFocus
                 style={{
-                  minWidth: "300px",
-                  flexShrink: 0,
+                  maxWidth: "300px",
                   transition: "all 0.3s ease-in-out",
                 }}
               />
           </div>
+
+          <button className="btn btn-transparent border-0 p-0 d-lg-none">
+            <Icon
+              name="Search"
+              size={24}
+              onClick={() => setShowSearch(true)}
+            />
+          </button>
 
           {/* 📱 Mobile Fullscreen Overlay */}
           {showSearch && (
@@ -119,11 +119,11 @@ function NavBar() {
 
                 <input
                   type="text"
-                  className="form-control border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
+                  className="border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
                   placeholder={placeholder}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  autoFocus
+                  // autoFocus
                   aria-label="Search products"
                 />
 

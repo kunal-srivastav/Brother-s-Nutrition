@@ -63,8 +63,8 @@ function PlaceOrder() {
             <div className="col-md-6 order-md-last">
               <div className="card shadow-lg rounded-4 p-4 mb-4 border-0" style={{ backgroundColor: "#f8f9fa" }}>
                 <h4 className="d-flex justify-content-between align-items-center mb-4">
-                  <span className="text-primary">Cart Totals</span>
-                  <span className="badge bg-primary rounded-pill fs-6">{cartItems.length}</span>
+                  <span className="text-success">Cart Totals</span>
+                  <span className="badge bg-success rounded-pill fs-6">{cartItems.length}</span>
                 </h4>
 
                 <ul className="list-group list-group-flush mb-4">

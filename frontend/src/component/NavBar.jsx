@@ -81,7 +81,7 @@ function NavBar() {
 
           {/* 🖥 Desktop Inline Search */}
           <div className="d-none d-lg-block ms-2">
-              <input type="text" className="form-control form" placeholder={placeholder}
+              <input type="text" className="form-control" placeholder={placeholder}
                 value={query} onChange={(e) => {setQuery(e.target.value)}} style={{minWidth: "300px",
                   maxWidth: "400px"
                 }}

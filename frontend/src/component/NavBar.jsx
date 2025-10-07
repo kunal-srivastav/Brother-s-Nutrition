@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../features/users/userController";
 const ProfilePic = React.lazy(() => import("../pages/ProfilePic"));
 import { Icon } from "./Icons";
+import { getProductsInCart } from "../features/carts/cartController";
 
   const navLinks = [
     { to: "/", label: "Home", icon: <Icon name="Home" /> },
@@ -42,6 +43,10 @@ function NavBar() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if(loggedInUser) dispatch(getProductsInCart());
+  }, [dispatch, loggedInUser]);
 
   const handleNavigate = (path) => {
     navigate(path);

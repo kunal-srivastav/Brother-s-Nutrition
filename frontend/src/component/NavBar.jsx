@@ -82,9 +82,7 @@ function NavBar() {
           {/* 🖥 Desktop Inline Search */}
           <div className="d-none d-lg-block ms-2">
               <input type="text" className="form-control" placeholder={placeholder}
-                value={query} onChange={(e) => {setQuery(e.target.value)}} style={{minWidth: "300px",
-                  maxWidth: "400px"
-                }}
+                value={query} onChange={(e) => {setQuery(e.target.value)}}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch(e)}
                 autoFocus
               />
@@ -100,7 +98,6 @@ function NavBar() {
               style={{ zIndex: 1050 }} >
               {/* Mobile Search Form */}
               <form onSubmit={handleSearch} className="d-flex align-items-center px-2 mt-2 gap-2">
-                {/* Back Button */}
                 <button
                   type="button"
                   onClick={() => setShowSearch(false)}
@@ -112,11 +109,11 @@ function NavBar() {
 
                 <input
                   type="text"
-                  className="border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
+                  className="form-control border-0 bg-light shadow-sm rounded-3 px-3 py-2 flex-grow-1"
                   placeholder={placeholder}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  // autoFocus
+                  autoFocus
                   aria-label="Search products"
                 />
 

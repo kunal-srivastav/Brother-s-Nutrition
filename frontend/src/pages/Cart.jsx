@@ -20,7 +20,7 @@ function Cart() {
   return (
     <div className="container py-5">
       <div className={`text-center mb-5 fade-section ${visible ? "visible" : ""}`}>
-        <h2 className="display-5 fw-bold mb-2">Your Cart</h2>
+        <h2 className="display-5 fw-bold mb-2 text-danger">Your Cart</h2>
         <hr className="mx-auto border-2 border-dark" style={{ width: "80px" }} />
       </div>
 

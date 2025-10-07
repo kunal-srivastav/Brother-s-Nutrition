@@ -297,7 +297,7 @@ function NavBar() {
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
                     `nav-link d-flex align-items-center gap-3 px-3 py-2 rounded-3 fw-medium ${
-                      isActive ? "bg-danger text-dark shadow-sm" : "text-dark"
+                      isActive ? "bg-danger text-light shadow-sm" : "text-dark"
                     }`
                   }
                 >

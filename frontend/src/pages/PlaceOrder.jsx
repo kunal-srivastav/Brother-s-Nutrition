@@ -55,7 +55,7 @@ function PlaceOrder() {
   };
 
   return (
-    <div className="row mt-2 g-4">
+    <div className="container-fluid row mt-2 g-4">
       {cartItems?.length > 0 ? (
         <>
           {/* Cart Totals & Payment */}

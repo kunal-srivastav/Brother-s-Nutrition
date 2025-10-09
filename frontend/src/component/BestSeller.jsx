@@ -29,8 +29,8 @@ function BestSeller() {
                 </div>
                 <div className="p-2 text-center">
                   <p className="small product-name mb-1">{product.name}</p>
-                  <span className="fw-bold text-success">₹{product.finalPrice}</span>
-                  <del className="ms-2 text-muted small">₹{product.price}</del>
+                  <span className="fw-bold product-price-original text-success">₹{product.finalPrice}</span>
+                  <del className="ms-2 product-price text-muted small">₹{product.price}</del>
                 </div>
               </Link>
             ))}

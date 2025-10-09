@@ -19,11 +19,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto; /* fixed image area */
+  height: 150px; /* fixed image area */
 }
 
 .product-image img {
   max-height: 150px;
+  width: auto;
   object-fit: contain;
 }
 
@@ -70,8 +71,6 @@
 }
 
 .ribbon {
-  font-family: 'Poppins', sans-serif;
-  text-transform: uppercase;
   position: absolute;
   top: 12px;
   left: -25px;
@@ -79,7 +78,16 @@
   color: #fff;
   padding: 5px 40px;
   transform: rotate(-45deg);
-  font-weight: 700;
   font-size: 0.75rem;
+  font-weight: 700;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+
+.product-name, .ribbon, .product-carousel-card {
+  font-family: 'Poppins', sans-serif; /* headings / emphasis */
+}
+
+.product-price, .product-price-original {
+  font-family: 'Roboto', sans-serif; /* body / numeric info */
 }

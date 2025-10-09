@@ -47,6 +47,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
+  margin-left: 2px;
   color: #28a745; /* green for discounted price */
 }
 

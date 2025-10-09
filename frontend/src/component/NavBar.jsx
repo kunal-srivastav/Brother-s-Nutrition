@@ -72,8 +72,8 @@ function NavBar() {
     <header className="navbar navbar-light bg-white sticky-top shadow-sm py-2">
       <div className="container-fluid d-flex align-items-center flex-nowrap">
         {/* Logo */}
-        <Link to="/" className="navbar-brand fw-bold text-dark fs-5 flex-shrink-0 me-2">
-          Brother's <span style={{color: "#de2509"}} >Nutrition</span>
+        <Link to="/" className="navbar-brand fw-bold text-dark flex-shrink-0 me-2">
+          <span className="fs-4" >B</span>rother's <span style={{color: "#de2509"}} >Nutrition</span>
         </Link>
 
         {/* Search Icon */}

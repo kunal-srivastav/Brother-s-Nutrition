@@ -25,7 +25,7 @@ function ProductCard ({product}) {
                 {product?.name}
                 </p>
                 <div>
-                <span className="product-price-original">
+                <span className="product-price">
                     ₹{product?.finalPrice}
                 </span>
                 </div>

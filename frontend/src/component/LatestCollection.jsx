@@ -43,7 +43,7 @@ function LatestCollection() {
       {/* Product Categories */}
       <div className="d-flex justify-content-evenly product-category-slider mt-3">
         {productCategory.map(({ img, category }, index) => (
-          <div key={index} className="category-item text-center"
+          <div key={index} className="text-center flex-shrink-0"
             onClick={() => navigate(`/collection?category=${category}`)} >
             <img src={img} alt={category} loading="lazy"
               className="rounded-circle category-img bg-secondary-subtle" />

@@ -8,11 +8,11 @@ const SkeletonHomePage = ({ productCount = 10, categoryCount = 6 }) => {
 
         {/* 🎞 Banner / Carousel */}
         <div className="mb-4">
-          <Skeleton height={250} borderRadius={12} />
+          <Skeleton height={300} borderRadius={12} />
         </div>
 
         {/* 🧭 Category Slider */}
-        <div className="d-flex justify-content-evenly gap-2 mb-4 overflow-auto py-2">
+        <div className="d-flex justify-content-evenly gap-2 mb-5 overflow-auto py-2">
           {Array.from({ length: categoryCount }).map((_, index) => (
             <div key={index} className="text-center flex-shrink-0">
               <Skeleton
@@ -27,12 +27,12 @@ const SkeletonHomePage = ({ productCount = 10, categoryCount = 6 }) => {
         </div>
 
         {/* 🛍 Section Title */}
-        <div className="mb-3 text-center">
+        {/* <div className="mb-5 text-center">
           <Skeleton height={35} width={200} style={{ margin: "0 auto" }} />
-        </div>
+        </div> */}
 
         {/* 🧱 Product Grid */}
-        <div className="row g-2 g-sm-3 g-md-4 row-cols-2 row-cols-md-3 row-cols-lg-5 bg-body-tertiary p-2 mb-4 rounded">
+        <div className="row g-2 g-sm-3 g-md-4 row-cols-2 row-cols-md-3 row-cols-lg-5 bg-body-tertiary p-2 mb-5 rounded">
           {Array.from({ length: productCount }).map((_, index) => (
             <div className="col" key={index}>
               <div className="card border-0 shadow-sm rounded p-2 h-100">
@@ -47,15 +47,12 @@ const SkeletonHomePage = ({ productCount = 10, categoryCount = 6 }) => {
 
         {/* 🏷 Best Offers */}
         <div className="mb-2">
-          <div className="mb-3 text-center">
-            <Skeleton height={35} width={180} style={{ margin: "0 auto" }} />
-          </div>
           <div className="d-flex flex-nowrap overflow-auto pb-3 px-2 bg-body-tertiary rounded">
             {Array.from({ length: 6 }).map((_, index) => (
               <div
                 key={index}
                 className="me-3 flex-shrink-0 shadow-sm border-0 rounded bg-white p-2"
-                style={{ minWidth: "180px", maxWidth: "200px" }}
+                style={{ minWidth: "200px", maxWidth: "200px" }}
               >
                 <Skeleton height={160} borderRadius={8} className="mb-2" />
                 <Skeleton height={18} width="90%" className="mb-1" />

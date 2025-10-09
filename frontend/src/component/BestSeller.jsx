@@ -30,7 +30,7 @@ function BestSeller() {
                 <div className="p-2 text-center">
                   <p className="product-name">{product.name}</p>
                   <span className="product-price-original">₹{product.finalPrice}</span>
-                  <del className="product-price">₹{product.price}</del>
+                  {/* <del className="product-price">₹{product.price}</del> */}
                 </div>
               </Link>
             ))}

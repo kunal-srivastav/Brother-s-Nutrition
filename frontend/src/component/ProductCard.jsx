@@ -21,11 +21,11 @@ function ProductCard ({product}) {
                 </div>
             </Link>
             <div className="p-3 mt-auto">
-                <p className="text-muted product-name text-truncate mb-1">
+                <p className="product-name">
                 {product?.name}
                 </p>
                 <div>
-                <span className="fw-bold product-price-original fs-5 text-dark">
+                <span className="product-price-original">
                     ₹{product?.finalPrice}
                 </span>
                 </div>

@@ -47,7 +47,7 @@ function LatestCollection() {
             onClick={() => navigate(`/collection?category=${category}`)} >
             <img src={img} alt={category} loading="lazy"
               className="rounded-circle category-img bg-secondary-subtle" />
-            <p className="text-muted small fw-semibold mt-2">{category}</p>
+            <p className="category-text">{category}</p>
           </div>
         ))}
       </div>

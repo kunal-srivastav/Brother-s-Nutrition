@@ -28,9 +28,9 @@ function BestSeller() {
                   <span className="ribbon">{product.discount}% OFF</span>
                 </div>
                 <div className="p-2 text-center">
-                  <p className="small product-name mb-1">{product.name}</p>
-                  <span className="fw-bold product-price-original text-success">₹{product.finalPrice}</span>
-                  <del className="ms-2 product-price text-muted small">₹{product.price}</del>
+                  <p className="product-name">{product.name}</p>
+                  <span className="product-price-original">₹{product.finalPrice}</span>
+                  <del className="product-price">₹{product.price}</del>
                 </div>
               </Link>
             ))}

@@ -29,15 +29,31 @@
 }
 
 .product-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #212529;
+  margin-bottom: 0.25rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;      /* limit to 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;        /* important: allow wrapping */
-  font-size: 0.95rem;
   line-height: 1.4;
   min-height: calc(1.4em * 2); /* keep height equal for all cards */
+}
+
+.product-price {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #28a745; /* green for discounted price */
+}
+
+.product-price-original {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #6c757d; /* muted gray */
+  text-decoration: line-through;
 }
 
 .thumbnail-img {

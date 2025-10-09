@@ -70,14 +70,16 @@
 }
 
 .ribbon {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
   position: absolute;
   top: 12px;
   left: -25px;
-  background: #dc3545;
+  background: #de2509;
   color: #fff;
   padding: 5px 40px;
   transform: rotate(-45deg);
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 0.75rem;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }

@@ -25,7 +25,7 @@ function ProductCard ({product}) {
                 {product?.name}
                 </p>
                 <div>
-                <span className="fw-bold fs-5 text-dark">
+                <span className="fw-bold product-price-original fs-5 text-dark">
                     ₹{product?.finalPrice}
                 </span>
                 </div>

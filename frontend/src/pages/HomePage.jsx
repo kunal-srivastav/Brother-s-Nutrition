@@ -7,11 +7,12 @@ const BestSeller = React.lazy(() => import ('../component/BestSeller'));
 function HomePage() {
 
   return (
-    <Suspense fallback={<SkeletonHomePage />} >
-      <Home />
-      <LatestCollection />
-      <BestSeller />
-    </Suspense>
+    // <Suspense fallback={<SkeletonHomePage />} >
+      <SkeletonHomePage />
+      // <Home />
+      // <LatestCollection />
+      // <BestSeller />
+    // </Suspense>
   )
 }
 

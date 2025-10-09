@@ -1,6 +1,8 @@
 .product-category-slider {
-  overflow: auto;
-  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;          /* Desktop: allow wrapping */
+  justify-content: center;  /* Center items on desktop */
+  gap: 1rem;
   width: 100%;
   padding: 0 10px;
 }
@@ -16,7 +18,7 @@
 
   .category-item {
     flex: 0 0 auto;           /* Prevent shrinking */
-    width: 100px;
+    width: 70px;
     scroll-snap-align: start;
   }
 

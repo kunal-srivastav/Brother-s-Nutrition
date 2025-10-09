@@ -74,9 +74,7 @@ function LatestCollection() {
       </div>
 
       {/* Pagination */}
-      <Suspense fallback={<div className="text-center py-3">Loading Pagination...</div>}>
-        <Pagination totalPages={totalPages} page={page} setPage={setPage} />
-      </Suspense>
+      <Pagination totalPages={totalPages} page={page} setPage={setPage} />
     </div>
   );
 }

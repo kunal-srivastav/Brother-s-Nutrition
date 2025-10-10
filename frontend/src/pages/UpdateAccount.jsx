@@ -40,7 +40,7 @@ function UpdateAccount () {
     }
 
     return (
-        <div className="d-flex mt-5 justify-content-center">
+        <div className="d-flex mt-5 p-2 justify-content-center">
             <FormSpinnerWrapper loading={loading} >
             <form method='post' onSubmit={handleOnSubmit} className="p-3 p-md-5 border rounded-3 bg-body-tertiary text-center">
                 <h2 className=''>Update Account</h2>
